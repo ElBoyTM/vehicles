@@ -273,8 +273,8 @@ class Cli {
   }
 
   // method to find a vehicle to tow
-  // TODO: add a parameter to accept a truck object
-  findVehicleToTow(): void {
+  // DONE: add a parameter to accept a truck object
+  findVehicleToTow(truck: Truck): void {
     inquirer
       .prompt([
         {
@@ -290,15 +290,15 @@ class Cli {
         },
       ])
       .then((answers) => {
-        // TODO: check if the selected vehicle is the truck
-        // TODO: if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action
-        // TODO: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
-        if (answers === this.vehicles) {
+        // DONE: check if the selected vehicle is the truck
+        // DONE: if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action
+        // DONE: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
+        if (answers.vehicleToTow === truck) {
           console.log(`The truck cannot tow itself`);
-          this.performActions();
         } else {
-          Truck.tow();
+          truck.tow(answers.vehicleToTow);
         }
+        this.performActions();
       });
   }
 
