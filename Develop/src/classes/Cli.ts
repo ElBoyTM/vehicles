@@ -393,10 +393,10 @@ class Cli {
             if (this.vehicles[i].vin === this.selectedVehicleVin) {
               if (this.vehicles[i] instanceof Truck) {
                 this.findVehicleToTow;
-                return;
+                this.performActions();
               } else {
                 console.log(`Your selected vehicle cannot tow`);
-                return;
+                this.performActions;
               }
             }
           }
