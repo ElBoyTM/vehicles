@@ -4,6 +4,7 @@ import Truck from "./Truck.js";
 import Car from "./Car.js";
 import Motorbike from "./Motorbike.js";
 import Wheel from "./Wheel.js";
+import { prototype } from "events";
 
 // define the Cli class
 class Cli {
@@ -400,12 +401,14 @@ class Cli {
             }
           }
         }
-        // TODO: add statements to perform the wheelie action only if the selected vehicle is a motorbike
+        // DONE: add statements to perform the wheelie action only if the selected vehicle is a motorbike
         else if (answers.action === 'Wheelie') {
           for (let i = 0; i < this.vehicles.length; i++) {
             if (this.vehicles[i].vin === this.selectedVehicleVin) {
               if (this.vehicles[i] instanceof Motorbike) {
-                
+                Motorbike.prototype.wheelie();
+              } else {
+                console.log(`Your selected vehicle cannot do a wheelie`)
               }
             }
           }
