@@ -406,7 +406,7 @@ class Cli {
           for (let i = 0; i < this.vehicles.length; i++) {
             if (this.vehicles[i].vin === this.selectedVehicleVin) {
               if (this.vehicles[i] instanceof Motorbike) {
-                Motorbike.prototype.wheelie();
+                Motorbike.prototype.wheelie(this.vehicles[i].make, this.vehicles[i].model);
               } else {
                 console.log(`Your selected vehicle cannot do a wheelie`)
               }
