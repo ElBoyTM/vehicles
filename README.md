@@ -20,6 +20,10 @@
   ## Usage
   See video
 
+  https://drive.google.com/file/d/1VDpLIlvGm_mT37d_ADBec0XTmsgQ2Z99/view
+
+  Select exit or press ctrl + C to end the program.
+
   ## Contributing
   Feel free to contribute. One area that could use attention is the wheels.
 
