@@ -396,7 +396,7 @@ class Cli {
                 return;
               } else {
                 console.log(`Your selected vehicle cannot tow`);
-                this.performActions();
+                return this.performActions();
               }
             }
           }
